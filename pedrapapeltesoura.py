@@ -28,8 +28,12 @@ while True:
             print(f"Você escolheu: {opcoes[jogJogador]}\n Seu adversário escolheu: {opcoes[jogComputador]}. \nVocê perdeu!")
 
     reiniciar = input('Deseja reiniciar? S/N: ')
+    
     if reiniciar == 's' or reiniciar == 'S':
         continue
-    else:
+    elif reiniciar == 'n' or reiniciar == 'N':
         print('Obrigada por jogar conosco!')
+        break
+    else:
+        print('Opção Inválida! Finalizando jogo.')
         break

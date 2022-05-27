@@ -1,6 +1,9 @@
+from random import randint
+
+
 opcoes = ["Pedra", "Papel", "Tesoura"]
 while True:
-    #sua jogada!
+    # sua jogada!
     print(f"1 - Pedra,\n2 - Papel,\n3 - Tesoura\n")
 
     while True:
@@ -9,31 +12,33 @@ while True:
         if jogJogador < 1 or jogJogador > 3:
             print("Opção inválida! Por favor escolha uma opção da lista!")
         else:
-            print
+            print("Jogada aceita!")
             break
 
     jogJogador -= 1
 
-    #jogada do computador
-
+    # jogada do computador
     from random import randint
-    jogComputador = (randint(0,2))
+    jogComputador = (randint(0, 2))
 
-    #Jogo
+    # Jogo
     if jogJogador == 0 and jogComputador == 2 or jogJogador == 1 and jogComputador == 0 or jogJogador == 2 and jogComputador == 1:
         print(f"Você escolheu: {opcoes[jogJogador]}\nSeu adversário escolheu: {opcoes[jogComputador]}\nVocê ganhou!")
     elif jogJogador == jogComputador:
-            print(f"Você escolheu: {opcoes[jogJogador]} \nSeu  adversário escolheu: {opcoes[jogComputador]}\nVocês empataram!")
+        print(
+            f"Você escolheu: {opcoes[jogJogador]} \nSeu  adversário escolheu: {opcoes[jogComputador]}\nVocês empataram!")
     else:
-            print(f"Você escolheu: {opcoes[jogJogador]}\n Seu adversário escolheu: {opcoes[jogComputador]}. \nVocê perdeu!")
+        print(f"Você escolheu: {opcoes[jogJogador]}\n Seu adversário escolheu: {opcoes[jogComputador]}. \nVocê perdeu!")
 
-    reiniciar = input('Deseja reiniciar? S/N: ')
-    
+    while True:
+        reiniciar = input('Deseja reiniciar? S/N: ')
+        if reiniciar == 's' or reiniciar == "S" or reiniciar == "N" or reiniciar == "n":
+            break
+        else:
+            print('Opção inválida!')
+
     if reiniciar == 's' or reiniciar == 'S':
         continue
     elif reiniciar == 'n' or reiniciar == 'N':
-        print('Obrigada por jogar conosco!')
-        break
-    else:
-        print('Opção Inválida! Finalizando jogo.')
+        print('Fim de jogo! Obrigada por jogar conosco!')
         break
